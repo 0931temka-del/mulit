@@ -3,8 +3,9 @@ usage: python3 gen_images.py [model]   (default gemini-2.5-flash-image)
 Key: uses GEMINI_API_KEY if set, otherwise relies on the agent proxy injecting it."""
 import os, sys, json, base64, urllib.request, urllib.error
 MODEL = sys.argv[1] if len(sys.argv) > 1 else "gemini-2.5-flash-image"
-STYLE = ("Cinematic still, 16:9, soft natural light, muted warm palette, shallow depth of field, "
-         "quiet melancholic documentary mood, painterly realism, no text, no watermark. ")
+STYLE = ("Photorealistic photograph, shot on a full-frame DSLR with a 50mm lens, natural skin texture and pores, "
+         "real human proportions, realistic fabric and hair, documentary film still, muted natural colors, soft natural light, "
+         "subtle film grain, vertical 9:16 composition, not a painting, not an illustration, not CGI, no text, no watermark. ")
 SHOTS = [  # (file, start-in-test-seconds is set in assemble_test.py)
  "A young man with a suitcase at a weathered wooden garden gate of a small village house, early morning mist.",
  "Close-up: an elderly grandmother's hand holding the sleeve of a young man's jacket at the gate, tender and reluctant to let go.",
@@ -21,7 +22,7 @@ for n, p in enumerate(SHOTS, 1):
     out = f"frames_ai/{n:02d}.png"
     if os.path.exists(out): continue
     body = json.dumps({"contents": [{"parts": [{"text": STYLE + p}]}],
-                       "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "16:9"}}}).encode()
+                       "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "9:16"}}}).encode()
     try:
         d = json.load(urllib.request.urlopen(urllib.request.Request(url, body, hdr), timeout=180))
     except urllib.error.HTTPError as e:
