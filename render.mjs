@@ -13,7 +13,7 @@ const shot = async (t, file) => { await page.evaluate(t => window.seek(t), t); a
 if (mode === 'stills') { for (const t of rest.map(Number)) await shot(t, `${out}/t${t.toFixed(1)}.jpg`); }
 else {
   const fps = 24; const total = await page.evaluate(() => fetch('timeline.json').then(r => r.json()).then(j => j.total));
-  const N = Math.ceil(total * fps), W = +rest[0], k = +rest[1];
+  const N = Math.ceil((+process.env.MAXT || total) * fps), W = +rest[0], k = +rest[1];
   for (let i = k; i < N; i += W) { const f = `${out}/${String(i).padStart(5, '0')}.jpg`; if (fs.existsSync(f)) continue; await shot(i / fps, f); if (i % 120 === k) console.log('frame', i, '/', N); }
 }
 await browser.close();

@@ -6,3 +6,5 @@ render_*.log
 render_done.flag
 out/
 audio/mix.wav
+frames_ai/
+__pycache__/
