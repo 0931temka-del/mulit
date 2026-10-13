@@ -9,7 +9,7 @@ for k, im in enumerate(imgs):
     d = seg[k+1] - seg[k]; fr = int(d * 24) + 12
     ins += ["-loop", "1", "-t", f"{d+.5:.2f}", "-i", im]
     z = "min(zoom+0.0008,1.12)" if k % 2 == 0 else "if(eq(on,0),1.12,max(zoom-0.0008,1.0))"
-    fl.append(f"[{k}:v]scale=2560:-1,zoompan=z='{z}':d={fr}:s=1280x720:fps=24,trim=0:{d:.2f},setpts=PTS-STARTPTS,fade=t=in:d=.5[v{k}]")
+    fl.append(f"[{k}:v]scale=2560:-1,zoompan=z='{z}':d={fr}:s=1280x720:fps=24,trim=0:{d:.2f},setpts=PTS-STARTPTS,fade=t=in:d=0.5[v{k}]")
 fl.append("".join(f"[v{k}]" for k in range(6)) + "concat=n=6:v=1[v]")
 a = len(imgs)
 ins += ["-i", "audio/narr_1.mp3", "-i", "audio/narr_2.mp3", "-i", "audio/music_1.mp3"]

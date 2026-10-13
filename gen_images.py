@@ -21,7 +21,7 @@ for n, p in enumerate(SHOTS, 1):
     out = f"frames_ai/{n:02d}.png"
     if os.path.exists(out): continue
     body = json.dumps({"contents": [{"parts": [{"text": STYLE + p}]}],
-                       "generationConfig": {"responseModalities": ["IMAGE"]}}).encode()
+                       "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "16:9"}}}).encode()
     try:
         d = json.load(urllib.request.urlopen(urllib.request.Request(url, body, hdr), timeout=180))
     except urllib.error.HTTPError as e:
