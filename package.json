@@ -1,0 +1,24 @@
+{
+  "name": "mulit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0931temka-del/mulit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0931temka-del/mulit/issues"
+  },
+  "homepage": "https://github.com/0931temka-del/mulit#readme",
+  "dependencies": {
+    "playwright-core": "^1.49.0",
+    "three": "^0.160.0"
+  }
+}

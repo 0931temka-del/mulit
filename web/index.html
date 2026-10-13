@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Последний звонок</title>
+<style>
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1280px;height:720px;overflow:hidden;font-family:'DejaVu Sans',Arial,sans-serif}
+canvas{display:block}
+.ov{position:absolute;pointer-events:none}
+#vig{inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.38) 100%)}
+#black{inset:0;background:#000;opacity:1}
+#cap{left:80px;right:80px;bottom:34px;text-align:center;color:#fff;font-size:30px;line-height:1.25;text-shadow:0 2px 6px #000,0 0 3px #000;opacity:0}
+#cap span{background:rgba(0,0,0,.38);padding:4px 16px;border-radius:12px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#split{left:639px;width:2px;top:0;bottom:0;background:#000;display:none}
+#cal{right:36px;top:28px;color:#fff;font-size:20px;opacity:0;text-align:center;text-shadow:0 2px 4px #000}
+#cal .row{display:flex;gap:10px;margin-top:8px}
+#cal .box{position:relative;width:58px;height:58px;border:3px solid #fff;border-radius:10px;background:rgba(255,255,255,.15);line-height:58px;font-size:22px}
+#cal .x{position:absolute;inset:0;color:#ff5252;font-size:54px;line-height:58px;opacity:0}
+#day{left:44px;top:30px;color:#fff;font-size:26px;opacity:0;text-shadow:0 2px 4px #000;letter-spacing:2px}
+#words{inset:0;opacity:0}
+#words span{position:absolute;color:#cfe3ff;font-size:26px;font-weight:bold;text-shadow:0 0 10px #4c7dff;white-space:nowrap}
+#title{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;opacity:0;text-align:center}
+#title h1{font-size:64px;margin:0 0 18px;font-weight:600;letter-spacing:2px}
+#title p{font-size:28px;margin:0;color:#d8d8d8}
+</style></head><body>
+<div id="stage">
+  <div id="gl"></div>
+  <div id="vig" class="ov"></div>
+  <div id="words" class="ov"></div>
+  <div id="cal" class="ov">Воскресенья<div class="row"><div class="box">Вс<div class="x">✕</div></div><div class="box">Вс<div class="x">✕</div></div><div class="box">Вс<div class="x">✕</div></div></div></div>
+  <div id="day" class="ov">ВОСКРЕСЕНЬЕ</div>
+  <div id="split" class="ov"></div>
+  <div id="cap" class="ov"><span></span></div>
+  <div id="black" class="ov"></div>
+  <div id="title" class="ov"><h1>Последний звонок</h1><p>Позвоните тем, кто вас ждёт</p></div>
+</div>
+<script type="importmap">{"imports":{"three":"../node_modules/three/build/three.module.js"}}</script>
+<script type="module" src="main.js"></script>
+</body></html>

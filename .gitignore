@@ -1,0 +1,8 @@
+node_modules/
+frames/
+*.key
+.env
+render_*.log
+render_done.flag
+out/
+audio/mix.wav
