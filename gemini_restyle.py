@@ -5,10 +5,18 @@ STYLES = {
  "clay": "handmade plasticine / modeling clay stop-motion animation look: visible fingerprints, soft rounded sculpted shapes, slightly uneven surfaces, matte clay texture, warm cozy studio light, like an Aardman claymation film still",
  "toon": "high-quality anime film look: clean ink outlines, cel-shaded colors with soft gradient sky, painterly clouds, vivid warm sunlight, like a Studio Ghibli / Makoto Shinkai background and character style",
  "lego": "built entirely from LEGO bricks: the man is a LEGO minifigure-style brick character, the house and the red car are built from visible glossy plastic bricks with round studs on top, the trees and road also made of bricks, macro toy photography look, shallow depth of field, bright playful studio light",
+ "cartoon": "soft Pixar-like 3D animated film look: rounded friendly shapes, warm cinematic lighting, gentle depth of field, rich but soft materials, polished feature-film quality",
+ "lowpoly": "stylized low-poly 3D game art: faceted flat-shaded triangles, clean pastel colors, simple geometric shapes, sunny clean light, polished indie-game look",
+ "voxel": "Minecraft-like voxel art: everything built from visible cubes, blocky pixel-style characters, trees and houses made of voxels, crisp cube shadows, charming blocky look",
+ "neon": "cyberpunk neon night scene: dark purple and blue night, glowing neon outlines in cyan, magenta and yellow, wet reflective ground, volumetric glow and light haze, synthwave mood",
+ "paper": "layered paper-cut craft art: flat shapes cut from textured colored paper, stacked in layers with soft drop shadows between layers, handmade papercraft diorama look",
+ "flat2d": "flat vector illustration with bold dark outlines, simple shapes, bright flat colors, minimal shading, modern explainer-video / editorial illustration style",
+ "ps1": "retro PlayStation 1 era 3D game screenshot: low-resolution blurry textures, dithering, slightly wobbly low-poly models, hazy fog, 1998 game graphics",
+ "watercolor": "watercolor storybook illustration: soft translucent washes of paint, visible cold-press paper texture, delicate ink linework, gentle color bleeding, children's picture-book style",
  "diorama": "tilt-shift miniature diorama look: a tiny toy-like model scene on a small grass platform, strong depth-of-field blur at the top and bottom of the frame, miniature photography, saturated cheerful colors, soft sunny light",
 }
 style = sys.argv[1]
-ref = base64.b64encode(open(f"styles_out/people/{style}.png", "rb").read()).decode()
+ref = base64.b64encode(open(f"styles_out/ref/{style}.png" if os.path.exists(f"styles_out/ref/{style}.png") else f"styles_out/people/{style}.png", "rb").read()).decode()
 prompt = ("Redraw this reference image as a beautiful, polished illustration. Keep the exact same composition, camera angle and layout: a young man in a blue jacket waving, standing in front of a small house with a red roof, a red car on the right, a road in the foreground, trees on the sides. "
           "Style: " + STYLES[style] + ". Much richer detail and nicer lighting than the reference, friendly character face with eyes and eyebrows, no text, no watermark.")
 body = json.dumps({"contents": [{"parts": [{"inlineData": {"mimeType": "image/png", "data": ref}}, {"text": prompt}]}],

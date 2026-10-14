@@ -2,3 +2,11 @@ image styles_out/gemini/diorama.png 0.067
 image styles_out/gemini/lego.png 0.067
 image styles_out/gemini/toon.png 0.067
 image styles_out/gemini/clay.png 0.067
+image styles_out/gemini/paper.png 0.067
+image styles_out/gemini/flat2d.png 0.067
+image styles_out/gemini/lowpoly.png 0.067
+image styles_out/gemini/cartoon.png 0.067
+image styles_out/gemini/voxel.png 0.067
+image styles_out/gemini/ps1.png 0.067
+image styles_out/gemini/watercolor.png 0.067
+image styles_out/gemini/neon.png 0.067
