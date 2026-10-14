@@ -1,0 +1,4 @@
+image a1 0.067
+image a2 0.067
+veo-fast clip_fast.mp4 0.80
+veo-fast clip_fast2.mp4 0.60
