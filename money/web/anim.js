@@ -12,18 +12,25 @@ const fmt = n => Math.round(n).toLocaleString('ru-RU').replace(/ /g, ' ');
 let T = null;
 
 // ---------- пиксельная монетка ----------
+const CUR = new URLSearchParams(location.search).get('cur') || 'rub';
+const SIGN = { usd: '$', ils: '₪', rub: '₽' }[CUR] || '₽';
+const GLYPH = {
+  usd: ['..#..', '.####', '#.#..', '.###.', '..#.#', '####.', '..#..'],
+  rub: ['####.', '#...#', '#...#', '####.', '#....', '###..', '#....'],
+  ils: ['####.####', '#..#.#..#', '#..#.#..#', '#..#.#..#', '#..#.#..#', '#..#.#..#', '...#.#...'],
+}[CUR];
 function coin(cx, cy, s, o = {}) {
-  const mood = o.mood || 'happy', blink = o.blink; const x0 = cx - 7 * s, y0 = cy - 7 * s;
-  for (let i = 0; i < 14; i++) for (let j = 0; j < 14; j++) {
-    const r = Math.hypot(i - 6.5, j - 6.5); if (r > 6.9) continue;
-    R(x0 + i * s, y0 + j * s, s, s, r > 6.0 ? '#c98a00' : (r > 4.7 ? GOLD : '#ffd95e'));
-  }
-  for (const [i, j] of [[3, 3], [4, 3], [3, 4]]) R(x0 + i * s, y0 + j * s, s, s, '#fff3b0');
-  const ey = blink ? [7] : [6, 7];
-  for (const ex of [4, 8]) for (const dx of [0, 1]) for (const j of ey) R(x0 + (ex + dx) * s, y0 + j * s, s, s, INK);
-  const mouth = mood === 'sad' ? [[5, 10], [6, 9], [7, 9], [8, 10]] : mood === 'wow' ? [[6, 9], [7, 9], [6, 10], [7, 10]] : [[5, 9], [6, 10], [7, 10], [8, 9]];
-  for (const [i, j] of mouth) R(x0 + i * s, y0 + j * s, s, s, INK);
-  if (o.legs !== false) for (const lx of [4, 8]) { R(x0 + lx * s, y0 + 14 * s, 2 * s, 2 * s, INK); }
+  const N = 20, s2 = s * 14 / N, mood = o.mood || 'happy', blink = o.blink; const x0 = cx - N / 2 * s2, y0 = cy - N / 2 * s2;
+  const P = (i, j, c, w = 1, h = 1) => { const x = Math.round(x0 + i * s2), y = Math.round(y0 + j * s2); ctx.fillStyle = c; ctx.fillRect(x, y, Math.round(x0 + (i + w) * s2) - x, Math.round(y0 + (j + h) * s2) - y); };
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) { const r = Math.hypot(i - 9.5, j - 9.5); if (r > 9.9) continue; P(i, j, r > 8.7 ? '#c98a00' : (r > 6.8 ? GOLD : '#ffd95e')); }
+  for (const [i, j] of [[3, 4], [4, 3], [3, 3], [5, 2]]) P(i, j, '#fff3b0');
+  const gw = GLYPH[0].length, gx = Math.round(10 - gw / 2);
+  GLYPH.forEach((row, j) => [...row].forEach((ch, i) => { if (ch === '#') P(gx + i, 3 + j, '#a86a00'); }));
+  const ey = blink ? [12] : [11, 12];
+  for (const ex of [5, 13]) for (const dx of [0, 1]) for (const j of ey) P(ex + dx, j, INK);
+  const mouth = mood === 'sad' ? [[7, 15], [8, 14], [11, 14], [12, 15], [9, 14], [10, 14]] : mood === 'wow' ? [[9, 14], [10, 14], [9, 15], [10, 15]] : [[7, 14], [8, 15], [9, 15], [10, 15], [11, 15], [12, 14]];
+  for (const [i, j] of mouth) P(i, j, INK);
+  if (o.legs !== false) for (const lx of [6, 12]) P(lx, N, INK, 2, 3);
 }
 function miniCoin(cx, cy, s) { for (let i = 0; i < 6; i++) for (let j = 0; j < 6; j++) { const r = Math.hypot(i - 2.5, j - 2.5); if (r <= 3) R(cx - 3 * s + i * s, cy - 3 * s + j * s, s, s, r > 2.2 ? '#c98a00' : GOLD); } R(cx - 2 * s, cy - 2 * s, s, s, '#fff3b0'); }
 function spark(x, y, s, a) { ctx.globalAlpha = a; R(x - s, y, 3 * s, s, '#fff'); R(x, y - s, s, 3 * s, '#fff'); ctx.globalAlpha = 1; }
@@ -43,7 +50,7 @@ function bg(i, a = 1) {
 function s0(t) { // монета-герой
   const k = easeBack(t / 0.6); const bob = Math.sin(t * 4) * 8; const cy = 330 + bob + (1 - k) * -300;
   coin(270, cy, 13, { blink: (t % 2.4) > 2.25, mood: 'happy' });
-  for (let i = 0; i < 6; i++) { const a = clamp((t - 0.5 - i * 0.25) / 0.4); const x = 80 + i * 76, y = 520 - Math.sin(t * 2 + i) * 14 - a * 40; ctx.globalAlpha = a * 0.9; txt('₽', x, y, 34, GOLD); ctx.globalAlpha = 1; }
+  for (let i = 0; i < 6; i++) { const a = clamp((t - 0.5 - i * 0.25) / 0.4); const x = 80 + i * 76, y = 520 - Math.sin(t * 2 + i) * 14 - a * 40; ctx.globalAlpha = a * 0.9; txt(SIGN, x, y, 34, GOLD); ctx.globalAlpha = 1; }
   for (let i = 0; i < 4; i++) spark(120 + i * 110, 200 + Math.sin(t * 3 + i * 2) * 20, 4, 0.5 + 0.5 * Math.sin(t * 5 + i));
   const q = clamp((t - 1.2) / 0.4); ctx.globalAlpha = q; rr(330, 150, 70, 60, 16, '#fff', '#e4d7c8'); txt('?', 365, 180, 38, OR); ctx.globalAlpha = 1;
 }
