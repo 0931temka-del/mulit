@@ -4,3 +4,9 @@ image img/04.png 0.067
 image img/02.png 0.067
 image img/06.png 0.067
 image img/03.png 0.067
+veo-lite clips/03.mp4 0.40
+veo-lite clips/05.mp4 0.40
+veo-lite clips/04.mp4 0.40
+tts narr.wav 0.02
+veo-lite clips/01.mp4 0.40
+tts narr.wav 0.02
