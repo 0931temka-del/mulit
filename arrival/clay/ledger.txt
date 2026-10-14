@@ -1,0 +1,7 @@
+image img1 0.067
+image img2 0.067
+image img3 0.067
+image img4 0.067
+image img5 0.067
+veo-lite clipA.mp4 0.30
+veo-lite clipD.mp4 0.40
