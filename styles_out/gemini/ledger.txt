@@ -1,0 +1,4 @@
+image styles_out/gemini/diorama.png 0.067
+image styles_out/gemini/lego.png 0.067
+image styles_out/gemini/toon.png 0.067
+image styles_out/gemini/clay.png 0.067
