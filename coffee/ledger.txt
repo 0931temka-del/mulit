@@ -1,0 +1,6 @@
+image img/01.png 0.067
+image img/05.png 0.067
+image img/04.png 0.067
+image img/02.png 0.067
+image img/06.png 0.067
+image img/03.png 0.067
