@@ -1,0 +1,15 @@
+ПРОМПТЫ ДЛЯ VEO (оживление картинок). Настройки: формат 9:16, длительность 8 секунд, режим «картинка в видео».
+Файлы называть не нужно: я узнаю клипы по первому кадру. Загрузи клипы в папку incoming/ на GitHub (ветка claude/upbeat-johnson-8g7nww).
+В конце каждого промпта стоит «no speech»: голоса в клипе не нужно, музыку и озвучку добавлю я.
+
+=== КЛИП 1 (картинка clip1.png): машина подъезжает ===
+The LEGO copper convertible slowly rolls forward and stops at the hotel entrance, the LEGO doorman and the valet step toward the car, palm leaves sway gently in the breeze, soft sunlight flickers on the stone floor, smooth cinematic camera slowly pushing in. Natural toy-brick stop-motion feel, no speech, no text.
+
+=== КЛИП 2 (картинка clip2.png): герой выходит из машины ===
+The LEGO hero minifigure swings his legs out of the open car door, stands up from the seat and steps onto the stone floor holding a paper cup, the valet holds the door, the pink vest slides off the seat back into the hero's hand, camera stays steady with a slight handheld feel. Natural toy-brick movement, no speech, no text.
+
+=== КЛИП 3 (картинка clip3.png): надевает жилет и передаёт чаевые ===
+The LEGO hero puts on the pink textured vest, adjusts the collar, hands a small bill to the LEGO valet with a nod, the valet nods back and bows slightly, soft sunlight, camera slowly orbits a little to the right. Natural toy-brick movement, no speech, no text.
+
+=== КЛИП 4 (картинка clip4.png): идёт к двери отеля ===
+The LEGO hero in the pink vest walks away from the camera across the sunlit stone floor toward the glass revolving door of the hotel, the doorman in the white shirt steps aside, the glass door slowly rotates, the copper convertible stays parked at the side, camera follows slowly from behind. Natural toy-brick movement, no speech, no text.

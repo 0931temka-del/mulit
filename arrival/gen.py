@@ -7,11 +7,14 @@ CAR = ("a long copper-bronze luxury open-top convertible with a tall chrome gril
 SHOTS = {
  1: STYLE + f"Wide low-angle shot: {CAR} slowly pulls up under the entrance of a luxury hotel with a limestone and grey-stone facade, LEGO palm trees, a rope barrier on brass stanchions in the foreground, dappled sun and shadow on the stone floor.",
  2: STYLE + f"Same scene and the same car. The driver's rear-hinged door is swung wide open. A LEGO valet minifigure in a black polo shirt and black trousers stands beside the door, hand on it. A LEGO hero minifigure with sunglasses, a black t-shirt and black wide trousers sits in the cream-white driver's seat, one leg out of the car, a pink textured vest draped over the seat back. Medium shot, hotel wall behind.",
+ 4: STYLE + f"Same scene, same car with the door open, same valet and same hero minifigure. The hero stands beside the car, putting on the pink textured vest over his black t-shirt, holding a paper cup in the other hand; the valet stands next to him with an open hand. Medium shot, palms and hotel behind.",
+ 5: STYLE + f"Same hotel entrance, same copper convertible parked at the side, same hero minifigure in the pink textured vest, sunglasses and black wide trousers, walking away from the camera toward the glass revolving door of the hotel, the valet standing nearby, a doorman in a white shirt and dark trousers by the door. Wide shot, sunlit stone floor.",
  3: STYLE + f"Same scene, same car with the door open, same valet and same hero minifigure. The hero now stands on the stone floor next to the car, holding a paper cup, the pink textured vest on his arm, looking confident, the valet beside him. Medium shot, palms and hotel behind.",
 }
 n = int(sys.argv[1]); parts = []
-if n > 1 and os.path.exists(f"img/{n-1:02d}.png"):
-    parts.append({"inlineData": {"mimeType": "image/png", "data": base64.b64encode(open(f"img/{n-1:02d}.png", "rb").read()).decode()}})
+ref = 3 if n >= 4 else n - 1
+if n > 1 and os.path.exists(f"img/{ref:02d}.png"):
+    parts.append({"inlineData": {"mimeType": "image/png", "data": base64.b64encode(open(f"img/{ref:02d}.png", "rb").read()).decode()}})
     parts.append({"text": "Keep exactly the same LEGO style, the same car, the same hotel and the same minifigures as in this reference image. "})
 parts.append({"text": SHOTS[n]})
 body = json.dumps({"contents": [{"parts": parts}], "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "9:16"}}}).encode()
