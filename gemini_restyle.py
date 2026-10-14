@@ -4,6 +4,7 @@ MODEL = "gemini-3.1-flash-image"
 STYLES = {
  "clay": "handmade plasticine / modeling clay stop-motion animation look: visible fingerprints, soft rounded sculpted shapes, slightly uneven surfaces, matte clay texture, warm cozy studio light, like an Aardman claymation film still",
  "toon": "high-quality anime film look: clean ink outlines, cel-shaded colors with soft gradient sky, painterly clouds, vivid warm sunlight, like a Studio Ghibli / Makoto Shinkai background and character style",
+ "lego": "built entirely from LEGO bricks: the man is a LEGO minifigure-style brick character, the house and the red car are built from visible glossy plastic bricks with round studs on top, the trees and road also made of bricks, macro toy photography look, shallow depth of field, bright playful studio light",
  "diorama": "tilt-shift miniature diorama look: a tiny toy-like model scene on a small grass platform, strong depth-of-field blur at the top and bottom of the frame, miniature photography, saturated cheerful colors, soft sunny light",
 }
 style = sys.argv[1]
