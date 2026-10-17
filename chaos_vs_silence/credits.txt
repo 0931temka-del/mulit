@@ -1,0 +1,14 @@
+Ролик «Хаос против тишины». Все клипы: Pixabay, лицензия Pixabay Content License (бесплатно, без указания автора обязательно, но указываем).
+
+88921 | автор MagicTV | https://pixabay.com/videos/id-88921/ | traffic, city, cityscape, urban, night, illuminate
+23258 | автор RafterJr72 | https://pixabay.com/videos/id-23258/ | seoul, people, night, city, illuminated, urban, ma
+304045 | автор VirtualZero | https://pixabay.com/videos/id-304045/ | phone, ringing, call, incoming, smartphone, mobile
+64594 | автор Josh_Malic | https://pixabay.com/videos/id-64594/ | phone, app, touch screen, mobile phone, smartphone
+142641 | автор u_etjkkdz15b | https://pixabay.com/videos/id-142641/ | man, phone, smartphone, mobile
+19627 | автор JoteF | https://pixabay.com/videos/id-19627/ | street, traffic, cars, city, night, view, car, sky
+189189 | автор NickyPe | https://pixabay.com/videos/id-189189/ | raindrops, drops, rain, window, window glass, wet,
+143419 | автор NickyPe | https://pixabay.com/videos/id-143419/ | candle, light, flame, burn, match, candlelight, ch
+317408 | автор doktorkleinmusic | https://pixabay.com/videos/id-317408/ | misty, forest, trees, lake, reflection, fog, sunse
+332531 | автор doktorkleinmusic | https://pixabay.com/videos/id-332531/ | sunrise, nature, misty, forest, lake, reflection, 
+190776 | автор MountainDweller | https://pixabay.com/videos/id-190776/ | fireplace, winter, christmas, thanksgiving, 4k
+Озвучка: Gemini TTS (gemini-2.5-flash-preview-tts, голос Charon). Звук: сделан кодом (sound.py).

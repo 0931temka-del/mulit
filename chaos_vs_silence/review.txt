@@ -1,0 +1,30 @@
+Here is the expert breakdown for this project:
+
+### 1. Art Director
+*   **Problem 0:01:** The split-screen line is too sharp and clean for the chaotic street footage. **Fix:** Apply a slight blur/soft vignette to the edges of both video layers to better blend them.
+*   **Problem 0:06:** The candle footage is too low resolution compared to the crisp city shot. **Fix:** Replace with 4K candle stock footage to match the texture and clarity of the top half.
+*   **Problem 0:13:** The lake transition is jarring; it looks like two different video files were just stacked. **Fix:** Add a subtle gradient mask between the two clips to create a smoother, more atmospheric transition.
+
+### 2. Editor
+*   **Problem 0:02:** Text "YOUR BRAIN RIGHT NOW" appears a beat too early. **Fix:** Delay the text fade-in by 0.5s so it hits on the first beat of the audio.
+*   **Problem 0:11:** The "Where did you look first" title is cut off slightly by the bottom padding. **Fix:** Shift the text up 15 pixels to ensure it stays within the mobile "safe zone."
+*   **Problem 0:18:** The transition to the final sunrise image is too static. **Fix:** Add a slow, gentle zoom-in (Ken Burns effect) to keep the viewer's eye engaged during the final call to action.
+
+### 3. Composer / Sound Engineer
+*   **Problem 0:01:** The city traffic soundscape is too generic and lacks "depth." **Fix:** Add a low-frequency rumble to emphasize the "chaotic" city feeling.
+*   **Problem 0:07:** The fire crackle is panned strictly to the left channel. **Fix:** Balance the sound to the center or use a stereo-widening effect for a more immersive feel.
+*   **Problem 0:15:** The transition to "silence" is too sudden. **Fix:** Use a cross-fade on the ambient noise rather than a hard cut to maintain the "calm" vibe.
+
+### 4. Colorist
+*   **Problem 0:04:** The orange neon sign in the city footage is clipping (too bright/blown out). **Fix:** Lower the highlight slider and increase the saturation slightly to restore the neon glow.
+*   **Problem 0:12:** The lake footage is muddy and lacks contrast. **Fix:** Increase the black levels and add a slight blue tint to the shadows to make the sunset oranges pop.
+*   **Problem 0:21:** The final image (sunrise) feels desaturated compared to the preceding clips. **Fix:** Increase global saturation and sharpness to provide a "rewarding" final visual.
+
+***
+
+### Overall Technical Assessment
+*   **Voice:** The voiceover is clear, calm, and authoritative, fitting the "meditation/psychology" genre perfectly.
+*   **Music/Sounds:** The ambient sounds work, but they feel like isolated clips. They need a consistent underlying "drone" or "pad" throughout to tie the experience together.
+*   **Loudness Balance:** The voiceover is dominant, but the ambient sounds (traffic/rain/fire) are inconsistent—the traffic at 0:00 is significantly louder than the rain at 0:04. They need to be normalized to a consistent LUFS level.
+*   **Captions:** They are readable due to the font choice, but the white-on-white/white-on-orange areas occasionally lack contrast. **Fix:** Add a subtle 30% black drop shadow or a thin outer glow.
+*   **Off-putting elements:** The split-screen line is very aggressive. It takes away from the aesthetic and makes the video feel like a "template" rather than a premium piece of content. Softening the divider is essential.
